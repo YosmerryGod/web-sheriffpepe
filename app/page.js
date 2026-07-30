@@ -6,7 +6,7 @@ import SectionDivider from "../components/SectionDivider";
 
 export default function Home() {
   return (
-    <main style={{ backgroundColor: '#E8F5E9' }}>
+    <main className="w-full min-h-screen bg-[#E8F5E9]">
       <Hero />
       <SectionDivider />
       <About />

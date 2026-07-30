@@ -1,10 +1,14 @@
+/* ============================================
+   NAVBAR - DESKTOP & MOBILE RESPONSIVE
+   ============================================ */
+
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 50;
-  padding: 16px 24px;
+  padding: 12px 16px;
   transform: translateY(0);
   transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.35s ease;
   will-change: transform;
@@ -22,18 +26,21 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
 }
 
+/* --- Logo --- */
 .logo {
   display: flex;
   align-items: center;
   text-decoration: none;
+  flex-shrink: 0;
 }
 
 .logoImageWrap {
   position: relative;
-  width: 100px;
-  height: 100px;
+  width: 56px;
+  height: 56px;
   flex-shrink: 0;
 }
 
@@ -43,19 +50,20 @@
   object-fit: contain;
 }
 
+/* --- Desktop Menu --- */
 .desktopMenu {
-  display: flex;
+  display: none; /* Hidden by default, shown on desktop */
   align-items: center;
   gap: 4px;
   background-color: #FFFFFF;
   border: 3px solid #1A1A1A;
   border-radius: 9999px;
-  padding: 8px;
+  padding: 6px;
   box-shadow: 4px 4px 0 #1A1A1A;
 }
 
 .navItem {
-  padding: 8px 24px;
+  padding: 8px 20px;
   border-radius: 9999px;
   font-weight: 700;
   font-size: 0.875rem;
@@ -71,6 +79,7 @@
   color: #00A000;
 }
 
+/* --- Dropdown Buy Now --- */
 .dropdownWrapper {
   position: relative;
 }
@@ -78,8 +87,8 @@
 .dropdownToggle {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 8px 24px;
+  gap: 6px;
+  padding: 8px 20px;
   border-radius: 9999px;
   font-weight: 700;
   font-size: 0.875rem;
@@ -110,7 +119,7 @@
 
 .dropdownMenu {
   position: absolute;
-  top: calc(100% + 8px);
+  top: calc(100% + 10px);
   right: 0;
   width: 320px;
   background-color: #FFFFFF;
@@ -131,6 +140,7 @@
   transform: translateY(0);
 }
 
+/* --- Swap Card --- */
 .swapCard {
   display: flex;
   flex-direction: column;
@@ -180,7 +190,7 @@
   background-color: #E8F5E9;
   border: 2px solid #1A1A1A;
   border-radius: 8px;
-  padding: 8px 16px;
+  padding: 8px 12px;
 }
 
 .tokenIcon {
@@ -212,7 +222,7 @@
 }
 
 .tokenAmountInput {
-  width: 90px;
+  width: 80px;
   border: none;
   background: transparent;
   outline: none;
@@ -268,6 +278,7 @@
   border-radius: 8px;
   padding: 8px 12px;
   text-align: center;
+  word-break: break-word;
 }
 
 .txLink {
@@ -299,20 +310,9 @@
   cursor: not-allowed;
 }
 
-.tokenIconYellow {
-  width: 32px;
-  height: 32px;
-  background-color: #FFD600;
-  border-radius: 9999px;
-  border: 2px solid #1A1A1A;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
 .tokenInfo {
   flex: 1;
+  min-width: 0;
 }
 
 .tokenName {
@@ -331,6 +331,7 @@
   font-size: 1rem;
   color: #1A1A1A;
   text-align: right;
+  white-space: nowrap;
 }
 
 .swapArrow {
@@ -355,7 +356,7 @@
 
 .swapButton {
   width: 100%;
-  padding: 16px;
+  padding: 14px;
   background-color: #00C805;
   color: #FFFFFF;
   border: 3px solid #1A1A1A;
@@ -390,13 +391,14 @@
   font-weight: 700;
 }
 
+/* --- Hamburger (Mobile) --- */
 .hamburger {
-  display: none;
-  width: 48px;
-  height: 48px;
+  display: flex;
+  width: 44px;
+  height: 44px;
   background-color: #FFFFFF;
   border: 3px solid #1A1A1A;
-  border-radius: 8px;
+  border-radius: 10px;
   box-shadow: 3px 3px 0 #1A1A1A;
   cursor: pointer;
   align-items: center;
@@ -418,7 +420,7 @@
 }
 
 .hamburgerLine {
-  width: 22px;
+  width: 20px;
   height: 3px;
   background-color: #1A1A1A;
   border-radius: 2px;
@@ -437,10 +439,11 @@
   transform: rotate(-45deg) translate(6px, -6px);
 }
 
+/* --- Overlay --- */
 .overlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: 60;
   opacity: 0;
   visibility: hidden;
@@ -452,20 +455,22 @@
   visibility: visible;
 }
 
+/* --- Drawer (Mobile Menu) --- */
 .drawer {
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   width: 280px;
+  max-width: 85vw;
   background-color: #E8F5E9;
   border-left: 3px solid #1A1A1A;
   box-shadow: -8px 0 24px rgba(0, 0, 0, 0.15);
   z-index: 70;
-  padding: 32px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 20px;
   transform: translateX(100%);
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -519,7 +524,7 @@
 }
 
 .drawerItem {
-  padding: 16px 24px;
+  padding: 14px 20px;
   border-radius: 12px;
   font-weight: 700;
   font-size: 1rem;
@@ -536,7 +541,7 @@
 }
 
 .drawerBuyButton {
-  padding: 16px 24px;
+  padding: 14px 20px;
   border-radius: 12px;
   font-weight: 700;
   font-size: 1rem;
@@ -547,12 +552,14 @@
   text-align: center;
   cursor: pointer;
   transition: all 0.2s ease;
+  margin-top: 8px;
 }
 
 .drawerBuyButton:hover {
   background-color: #00A000;
 }
 
+/* --- Modal Swap (Mobile) --- */
 .modalOverlay {
   position: fixed;
   inset: 0;
@@ -561,7 +568,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px;
+  padding: 16px;
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
@@ -575,11 +582,13 @@
 .modalSwap {
   width: 100%;
   max-width: 360px;
+  max-height: 90vh;
+  overflow-y: auto;
   background-color: #FFFFFF;
   border: 3px solid #1A1A1A;
   border-radius: 16px;
   box-shadow: 8px 8px 0 #1A1A1A;
-  padding: 32px;
+  padding: 24px;
   transform: scale(0.9) translateY(20px);
   transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
@@ -592,13 +601,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   padding-bottom: 16px;
   border-bottom: 2px dashed #C8E6C9;
 }
 
 .modalTitle {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 900;
   color: #1A1A1A;
 }
@@ -621,32 +630,30 @@
   font-weight: 700;
   color: #1A1A1A;
   transition: all 0.15s ease;
+  flex-shrink: 0;
 }
 
 .modalClose:hover {
   background-color: #B9F6CA;
 }
 
-@media (max-width: 768px) {
-  .desktopMenu {
-    display: none;
-  }
-
-  .hamburger {
-    display: flex;
-  }
-
+/* ============================================
+   DESKTOP BREAKPOINT (min-width: 769px)
+   ============================================ */
+@media (min-width: 769px) {
   .navbar {
-    padding: 12px 16px;
+    padding: 16px 24px;
   }
 
   .logoImageWrap {
-    width: 44px;
-    height: 44px;
+    width: 72px;
+    height: 72px;
   }
-}
 
-@media (min-width: 769px) {
+  .desktopMenu {
+    display: flex;
+  }
+
   .hamburger {
     display: none !important;
   }
@@ -654,5 +661,54 @@
   .overlay,
   .drawer {
     display: none !important;
+  }
+
+  .navItem {
+    padding: 8px 24px;
+  }
+
+  .dropdownToggle {
+    padding: 8px 24px;
+  }
+
+  .tokenAmountInput {
+    width: 90px;
+  }
+
+  .modalSwap {
+    padding: 32px;
+  }
+
+  .modalTitle {
+    font-size: 1.25rem;
+  }
+}
+
+/* ============================================
+   SMALL MOBILE (max-width: 380px)
+   ============================================ */
+@media (max-width: 380px) {
+  .navbar {
+    padding: 10px 12px;
+  }
+
+  .logoImageWrap {
+    width: 48px;
+    height: 48px;
+  }
+
+  .hamburger {
+    width: 40px;
+    height: 40px;
+  }
+
+  .drawer {
+    width: 260px;
+    padding: 20px;
+  }
+
+  .dropdownMenu {
+    width: 280px;
+    right: -60px; /* Shift left supaya tidak overflow layar */
   }
 }

@@ -14,8 +14,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="id">
-      <body className={`${inter.variable} font-sans antialiased`}>
+    <html lang="id" className="overflow-x-hidden">
+      <body className={`${inter.variable} font-sans antialiased overflow-x-hidden`}>
         <Navbar />
         {children}
       </body>

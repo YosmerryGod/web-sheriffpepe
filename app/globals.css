@@ -2,6 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+/* === RESET: Hilangkan margin & padding default browser === */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #E8F5E9;
+  color: #1A1A1A;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
 @layer base {
   :root {
     /* === BACKGROUND (Hijau Muda Fresh) === */
@@ -58,35 +84,22 @@
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
   }
+}
 
-  html {
-    scroll-behavior: smooth;
-  }
+/* === SCROLLBAR CUSTOM === */
+::-webkit-scrollbar {
+  width: 8px;
+}
 
-  body {
-    font-family: var(--font-sans);
-    background-color: #E8F5E9;  /* ← HARDCODE HIJAU */
-    color: #1A1A1A;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    min-height: 100vh;
-  }
+::-webkit-scrollbar-track {
+  background: #E8F5E9;
+}
 
-  /* === SCROLLBAR CUSTOM === */
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
+::-webkit-scrollbar-thumb {
+  background: #00C805;
+  border-radius: 9999px;
+}
 
-  ::-webkit-scrollbar-track {
-    background: #E8F5E9;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: #00C805;
-    border-radius: 9999px;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: #00A000;
-  }
+::-webkit-scrollbar-thumb:hover {
+  background: #00A000;
 }
