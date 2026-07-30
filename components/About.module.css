@@ -1,0 +1,137 @@
+/* ============================================
+   ABOUT SECTION
+   ============================================ */
+
+.about {
+  padding: 96px 24px;
+  background-color: #90fa99;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+
+.header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 8px 24px;
+  background-color: #FFFFFF;
+  border: 3px solid #1A1A1A;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 800;
+  color: #00C805;
+  letter-spacing: 0.1em;
+  margin-bottom: 24px;
+  box-shadow: 3px 3px 0 #1A1A1A;
+}
+
+.title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 900;
+  color: #1A1A1A;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.title span {
+  color: #00C805;
+}
+
+.subtitle {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: #4A4A4A;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+/* ============================================
+   FEATURES GRID
+   ============================================ */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.card {
+  background-color: #FFFFFF;
+  border: 3px solid #1A1A1A;
+  border-radius: 16px;
+  padding: 32px 24px;
+  text-align: center;
+  box-shadow: 5px 5px 0 #1A1A1A;
+  transition: all 0.15s ease;
+}
+
+.card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 8px 8px 0 #1A1A1A;
+}
+
+.cardIcon {
+  width: 64px;
+  height: 64px;
+  background-color: #00C805;
+  border: 3px solid #1A1A1A;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  color: #FFFFFF;
+  box-shadow: 3px 3px 0 #1A1A1A;
+}
+
+.cardTitle {
+  font-size: 1.125rem;
+  font-weight: 900;
+  color: #1A1A1A;
+  margin-bottom: 12px;
+  letter-spacing: 0.02em;
+}
+
+.cardDesc {
+  font-size: 0.875rem;
+  color: #4A4A4A;
+  line-height: 1.6;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .about {
+    padding: 64px 16px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 24px 20px;
+  }
+
+  .cardIcon {
+    width: 56px;
+    height: 56px;
+  }
+}

@@ -1,0 +1,289 @@
+.hero {
+  position: relative;
+  width: 100%;
+  height: 95vh;
+  min-height: 300px;
+  background-color: #67f873;
+  overflow: hidden;
+}
+
+@keyframes heroPopDown {
+  from {
+    opacity: 0;
+    transform: var(--enter-base, translate(0, 0)) translateY(-28px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: var(--enter-base, translate(0, 0)) translateY(0) scale(1);
+  }
+}
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: var(--enter-base, translate(0, 0)) translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: var(--enter-base, translate(0, 0)) translateY(0);
+  }
+}
+
+@keyframes heroCharacterRise {
+  0% {
+    opacity: 0;
+    transform: var(--enter-base, translate(-50%, -50%)) translateY(90px) scale(0.9);
+  }
+  70% {
+    opacity: 1;
+    transform: var(--enter-base, translate(-50%, -50%)) translateY(-8px) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: var(--enter-base, translate(-50%, -50%)) translateY(0) scale(1);
+  }
+}
+
+@keyframes heroDriftLeft {
+  from {
+    opacity: 0;
+    transform: var(--enter-base) translateX(-90px);
+  }
+  to {
+    opacity: 0.9;
+    transform: var(--enter-base) translateX(0);
+  }
+}
+
+@keyframes heroDriftRight {
+  from {
+    opacity: 0;
+    transform: var(--enter-base) translateX(90px);
+  }
+  to {
+    opacity: 0.9;
+    transform: var(--enter-base) translateX(0);
+  }
+}
+
+.nameWrap {
+  position: absolute;
+  left: 0%;
+  top: 10%;
+  --enter-base: translate(0, 0);
+  transform: var(--enter-base);
+  width: 400px;
+  height: 120px;
+  z-index: 15;
+  animation: heroPopDown 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+}
+
+.nameImage {
+  width: 100% !important;
+  height: auto !important;
+  max-width: none !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  object-fit: contain;
+  object-position: left top;
+  filter: drop-shadow(2px 2px 0 rgba(0, 0, 0, 0.1));
+}
+
+.descWrap {
+  position: absolute;
+  left: 2%;
+  top: 45%;
+  width: 420px;
+  z-index: 15;
+  --enter-base: translate(0, 0);
+  transform: var(--enter-base);
+  animation: heroFadeUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.45s both;
+}
+
+.descText {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #000000;
+  line-height: 1.7;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+.characterWrap {
+  position: absolute;
+  left: 50%;
+  top: 88%;
+  --enter-base: translate(-50%, -50%);
+  transform: var(--enter-base);
+  width: 600px;
+  height: 800px;
+  z-index: 10;
+  animation: heroCharacterRise 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
+}
+
+.characterImage {
+  width: 85% !important;
+  height: auto !important;
+  max-width: none !important;
+  position: absolute !important;
+  bottom: -10% !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  object-fit: contain;
+  object-position: center bottom;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
+}
+
+.cloudLeftWrap {
+  position: absolute;
+  left: -10%;
+  bottom: 110%;
+  --enter-base: translateY(30%) scale(1.3);
+  transform: var(--enter-base);
+  width: 750px;
+  height: 450px;
+  z-index: 5;
+  animation: heroDriftLeft 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0s both;
+}
+
+.cloudLeftImage {
+  width: 100% !important;
+  height: auto !important;
+  max-width: none !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  object-fit: contain;
+  object-position: left bottom;
+  opacity: 0.9;
+}
+
+.cloudRightWrap {
+  position: absolute;
+  right: -5%;
+  bottom: 90%;
+  --enter-base: translateY(30%) scaleX(-1) scale(1.3);
+  transform: var(--enter-base);
+  width: 600px;
+  height: 360px;
+  z-index: 5;
+  animation: heroDriftRight 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+}
+
+.cloudRightImage {
+  width: 100% !important;
+  height: auto !important;
+  max-width: none !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  right: 0 !important;
+  object-fit: contain;
+  object-position: right bottom;
+  opacity: 0.9;
+}
+
+.socials {
+  position: absolute;
+  left: 68%;
+  bottom: 30%;
+  display: flex;
+  gap: 16px;
+  z-index: 20;
+  --enter-base: translate(0, 0);
+  transform: var(--enter-base);
+  animation: heroFadeUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.65s both;
+}
+
+.socialIcon {
+  width: 60px;
+  height: 60px;
+  background-color: #FFFFFF;
+  border: 3px solid #1A1A1A;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1A1A1A;
+  box-shadow: 4px 4px 0 #1A1A1A;
+  transition: all 0.15s ease;
+}
+
+.socialIcon:hover {
+  background-color: #00C805;
+  color: #FFFFFF;
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 #1A1A1A;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nameWrap,
+  .descWrap,
+  .characterWrap,
+  .cloudLeftWrap,
+  .cloudRightWrap,
+  .socials {
+    animation: none;
+    opacity: 1;
+    transform: var(--enter-base, translate(0, 0));
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 500px;
+  }
+  
+  .nameWrap {
+    width: 280px;
+    height: 80px;
+    left: 50%;
+    top: 1%;
+    --enter-base: translateX(-50%);
+  }
+  
+  .descWrap {
+    left: 50%;
+    top: 25%;
+    --enter-base: translateX(-50%);
+    width: 90%;
+    max-width: 320px;
+  }
+  
+  .descText {
+    font-size: 0.8rem;
+    text-align: center;
+  }
+  
+  .characterWrap {
+    width: 350px;
+    height: 500px;
+    top: 88%;
+  }
+  
+  .characterImage {
+    width: 130% !important;
+    bottom: -15% !important;
+  }
+  
+  .cloudLeftWrap {
+    width: 300px;
+    height: 200px;
+    left: -10%;
+    --enter-base: translateY(40%) scale(1.1);
+  }
+  
+  .cloudRightWrap {
+    width: 300px;
+    height: 200px;
+    right: -10%;
+    --enter-base: translateY(40%) scaleX(-1) scale(1.1);
+  }
+  
+  .socials {
+    left: 50%;
+    bottom: 3%;
+    --enter-base: translateX(-50%);
+  }
+}

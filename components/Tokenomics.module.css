@@ -1,0 +1,249 @@
+/* ============================================
+   TOKENOMICS SECTION
+   ============================================ */
+
+.tokenomics {
+  padding: 96px 24px;
+  background-color: #59f65f;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+
+.header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 8px 24px;
+  background-color: #FFFFFF;
+  border: 3px solid #1A1A1A;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 800;
+  color: #00C805;
+  letter-spacing: 0.1em;
+  margin-bottom: 24px;
+  box-shadow: 3px 3px 0 #1A1A1A;
+}
+
+.title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 900;
+  color: #1A1A1A;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.title span {
+  color: #00C805;
+}
+
+.subtitle {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: #4A4A4A;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+/* ============================================
+   STATS ROW
+   ============================================ */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 64px;
+}
+
+.statCard {
+  background-color: #FFFFFF;
+  border: 3px solid #1A1A1A;
+  border-radius: 16px;
+  padding: 32px 24px;
+  text-align: center;
+  box-shadow: 5px 5px 0 #1A1A1A;
+}
+
+.statValue {
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-weight: 900;
+  color: #00C805;
+  margin-bottom: 8px;
+  word-break: break-all;
+}
+
+.statLabel {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #4A4A4A;
+  letter-spacing: 0.05em;
+}
+
+/* ============================================
+   DISTRIBUTION BARS
+   ============================================ */
+
+.distribution {
+  background-color: #FFFFFF;
+  border: 3px solid #1A1A1A;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 5px 5px 0 #1A1A1A;
+  margin-bottom: 48px;
+}
+
+.distTitle {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #1A1A1A;
+  margin-bottom: 32px;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.bars {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.barRow {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.barLabel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #1A1A1A;
+}
+
+.barPercent {
+  font-weight: 900;
+  color: #00C805;
+}
+
+.barTrack {
+  width: 100%;
+  height: 32px;
+  background-color: #E8F5E9;
+  border: 2px solid #1A1A1A;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.barFill {
+  height: 100%;
+  border-radius: 9999px;
+  transition: width 1s ease;
+}
+
+/* ============================================
+   CONTRACT ADDRESS
+   ============================================ */
+
+.contract {
+  text-align: center;
+}
+
+.contractLabel {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 800;
+  color: #4A4A4A;
+  letter-spacing: 0.1em;
+  margin-bottom: 16px;
+}
+
+.contractBox {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #FFFFFF;
+  border: 3px solid #1A1A1A;
+  border-radius: 12px;
+  padding: 16px 24px;
+  box-shadow: 4px 4px 0 #1A1A1A;
+}
+
+.contractAddress {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #1A1A1A;
+  word-break: break-all;
+}
+
+.copyBtn {
+  width: 40px;
+  height: 40px;
+  background-color: #00C805;
+  border: 2px solid #1A1A1A;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #FFFFFF;
+  flex-shrink: 0;
+  transition: all 0.15s ease;
+}
+
+.copyBtn:hover {
+  background-color: #00A000;
+  transform: translate(-2px, -2px);
+  box-shadow: 3px 3px 0 #1A1A1A;
+}
+
+.copyBtn:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 #1A1A1A;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .tokenomics {
+    padding: 64px 16px;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .distribution {
+    padding: 24px;
+  }
+
+  .contractBox {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .contractAddress {
+    font-size: 0.75rem;
+  }
+}
